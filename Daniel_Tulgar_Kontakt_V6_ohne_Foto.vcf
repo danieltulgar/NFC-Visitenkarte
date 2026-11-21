@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Tulgar;Daniel;;;
+FN:Daniel Tulgar
+ORG:DENK - ENERGY SOLUTIONS
+TEL;TYPE=WORK,VOICE,PREF:+49 176 41599406
+EMAIL;TYPE=INTERNET,WORK,PREF:daniel.tulgar@denk-energy.de
+ADR;TYPE=WORK,PREF:;;Föhrenweg 18;Eislingen/Fils;;73054;Deutschland
+ADR;TYPE=WORK:;;Erich-Herion-Str. 29;Fellbach;;70736;Deutschland
+URL:https://www.denk-energy.de
+END:VCARD

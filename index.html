@@ -47,20 +47,19 @@
     .detail-value {font-size:14px;font-weight:650;overflow-wrap:anywhere;line-height:1.38}
     .location {display:flex;gap:12px;align-items:start;font-size:13px;line-height:1.55;color:#415149}
     .location + .location {margin-top:12px}
-    .location-nr {font-size:10px;color:#71877b;font-weight:800; padding-top:3px; flex:0 0 94px; letter-spacing:.035em; text-transform:uppercase}
+    .location-nr {font-size:10px;color:#71877b;font-weight:800; padding-top:3px; flex:0 0 112px; letter-spacing:.035em; text-transform:uppercase}
     .outside {font-size:11px; color:#86948a; text-align:center; margin:19px auto 0;line-height:1.5;max-width:380px}
     @media (min-width:600px) {body {display:flex;align-items:center;justify-content:center;padding:48px 24px}.shell{width:100%}}
     @media (prefers-reduced-motion:reduce) {.save{transition:none}}
 
-    .download-feedback{margin:13px 0 0;background:#edf5ee;color:#23553c;padding:12px 14px;border-radius:12px;font-size:12px;line-height:1.6;text-align:left;border:1px solid #d9e8dc}
     .alternatives{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:16px 0 0}
     .secondary-download{border:1px solid #cbdad0;background:#f6f9f5;color:#1d4d3b;text-decoration:none;padding:11px 13px;border-radius:10px;font-weight:700;font-size:12px;line-height:1.4}
     .secondary-download:hover{background:#e8f2e9}
+    .secondary-download:focus-visible{outline:3px solid #348c63;outline-offset:3px}
     .help-details{margin:18px 0 0;text-align:left;border-top:1px solid #e8eee9;padding:15px 0 0;font-size:13px;line-height:1.65;color:#53675a}
     .help-details summary{cursor:pointer;color:#244b36;font-weight:750}
     .help-details ol{padding-left:20px;margin:10px 0 5px}
     .help-details li+li{margin-top:6px}
-    [hidden]{display:none!important}
   </style>
 </head>
 <body>
@@ -72,25 +71,26 @@
         <h1>Daniel Tulgar</h1>
         <p class="org">DENK - ENERGY SOLUTIONS</p>
         <p class="intro">Schön, dass wir uns kennenlernen! Speichere meine Kontaktdaten direkt in deinem Adressbuch.</p>
-        <a class="save" id="save-contact" href="./kontakt.vcf?v=3" download="Daniel_Tulgar.vcf" type="text/vcard" aria-label="Kontaktdatei herunterladen">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5"/><path d="M5 17v3h14v-3"/></svg>
+        <!-- WICHTIG: KEIN download-Attribut. Auf Safari kann die native Kontaktvorschau erscheinen. -->
+        <a class="save" id="save-contact" href="./Daniel_Tulgar_Kontakt_V6.vcf" type="text/vcard" aria-label="Kontaktkarte im iPhone öffnen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M20 8v6m-3-3h6"/></svg>
           Kontakt speichern
         </a>
-        <p class="hint">Der Button lädt eine Kontaktdatei. Auf dem iPhone musst du das Hinzufügen anschließend noch bestätigen.</p>
-        <p class="download-feedback" id="download-feedback" role="status" hidden>Tippe in Safari auf das Download-Symbol und öffne <strong>Daniel_Tulgar.vcf</strong>. Wenn kein Download erscheint, nutze unten <strong>Direkt öffnen</strong>.</p>
-        <div class="alternatives" aria-label="Weitere Möglichkeiten zum Kontaktimport">
-          <a class="secondary-download" href="./kontakt.vcf?v=3-open" type="text/vcard">Kontakt direkt öffnen (iPhone)</a>
-          <a class="secondary-download" href="./kontakt_ohne_foto.vcf?v=3" download="Daniel_Tulgar_ohne_Foto.vcf" type="text/vcard">Alternativer Download ohne Foto</a>
+        <p class="hint">iPhone: Wenn die Kontaktvorschau erscheint, <strong>„Neuen Kontakt erstellen“</strong> und <strong>„Fertig“</strong> wählen. Andere iPhones können die Datei zunächst herunterladen.</p>
+        <div class="alternatives" aria-label="Alternative Wege zum Kontaktimport">
+          <a class="secondary-download" href="./Daniel_Tulgar_Kontakt_V6_ohne_Foto.vcf" type="text/vcard">Ohne Foto öffnen (Alternative)</a>
+          <a class="secondary-download" href="./Daniel_Tulgar_Kontakt_V6.vcf" download="Daniel_Tulgar_Kontakt.vcf" type="text/vcard">VCF-Datei laden</a>
         </div>
         <details class="help-details">
-          <summary>So speicherst du den Kontakt auf dem iPhone</summary>
+          <summary>iPhone: So funktioniert das Speichern</summary>
           <ol>
-            <li>Öffne diese Seite möglichst direkt in Safari und tippe auf <b>Kontakt speichern</b>.</li>
-            <li>Wird eine VCF-Datei geladen, öffne sie über das Downloads-Symbol in Safari oder über <b>Dateien → Downloads</b>.</li>
-            <li>Wähle in der Kontaktvorschau <b>Neuen Kontakt erstellen</b> und bestätige mit <b>Fertig / Sichern</b>.</li>
-            <li>Falls das nicht klappt, probiere <b>Kontakt direkt öffnen</b> oder den alternativen Download ohne Foto.</li>
+            <li>Die Seite möglichst in <strong>Safari</strong> öffnen und <b>Kontakt speichern</b> antippen.</li>
+            <li>Falls die Vorschau erscheint: <b>Neuen Kontakt erstellen</b> und <b>Fertig</b> wählen.</li>
+            <li>Falls eine Datei geladen wird: In <b>Dateien → Downloads</b> die <b>.vcf</b> öffnen.</li>
+            <li>Falls der Import nicht klappt: <b>Ohne Foto öffnen</b> versuchen. Alternativ die Datei als <b>Anhang per Mail oder Nachrichten</b> senden und dort antippen (von Apple dokumentierter Importweg).</li>
+            <li>Zum Prüfen der Adress-Reihenfolge am besten <b>einen neuen Kontakt importieren</b> und nicht einen bereits gespeicherten Kontakt zusammenführen.</li>
           </ol>
-          <p>Hinweis: iPhones erlauben Webseiten aus Sicherheitsgründen kein automatisches Speichern ohne deine Bestätigung.</p>
+          <p>Je nach iOS-Version und Browser variiert der Ablauf. Eine Webseite darf keinen Kontakt automatisch speichern. Auch die Reihenfolge mehrerer Geschäftsadressen kann die Kontakte-App anders anzeigen.</p>
         </details>
       </div>
       <section class="section" aria-label="Kontaktmöglichkeiten">
@@ -110,18 +110,11 @@
       </section>
       <section class="section" aria-label="Adressen">
         <h2 class="section-title">Adressen</h2>
-        <div class="location"><span class="location-nr">Geschäftlich</span><div>Erich-Herion-Str. 29, 70736 Fellbach, Deutschland</div></div>
-<div class="location"><span class="location-nr">Geschäftlich</span><div>Föhrenweg 18, 73054 Eislingen/Fils, Deutschland</div></div>
+        <div class="location"><span class="location-nr">Geschäftlich · 1</span><div>Föhrenweg 18, 73054 Eislingen/Fils, Deutschland</div></div>
+        <div class="location"><span class="location-nr">Geschäftlich · 2</span><div>Erich-Herion-Str. 29, 70736 Fellbach, Deutschland</div></div>
       </section>
     </article>
-    <p class="outside">Einmal scannen. Einfach speichern.<br>Die Kontaktdaten auf dieser Seite sind öffentlich erreichbar.</p>
+    <p class="outside">Einmal scannen. Kontakt ansehen und speichern.<br>Die Kontaktdaten auf dieser Seite sind öffentlich erreichbar.</p>
   </main>
-  <script>
-    (function(){
-      var a = document.getElementById('save-contact');
-      var note = document.getElementById('download-feedback');
-      if (a && note) a.addEventListener('click', function(){ note.hidden = false; });
-    }());
-  </script>
 </body>
 </html>
